@@ -1,6 +1,7 @@
 cimport cython
-from libc.stdlib cimport malloc, free
 cimport fclayout
+from libc.stdlib cimport free, malloc
+
 
 cdef class FCLAYOUT:
     cdef fclayout.FCLayout* s
@@ -48,7 +49,7 @@ cdef class FCLAYOUT:
     @property
     def patch(self):
         return self.s.patch
-    
+
     @property
     def cable(self):
        return self.s.cable

@@ -1,8 +1,8 @@
 from sys import platform
 
+import numpy
 from setuptools import setup
 from setuptools.extension import Extension
-import numpy
 
 try:
     from Cython.Build import cythonize
@@ -29,7 +29,7 @@ extensions = [
         'fcutils',
         sources=['src/fcutils/fcutils' + ext],
         include_dirs=[fcio_libs, 'src/fcutils', numpy.get_include()],
-        extra_objects=extra_objects
+        extra_objects=extra_objects,
     )
 ]
 

@@ -1,4 +1,5 @@
 from legend_testdata import LegendTestData
+
 import fcutils
 
 ldata = LegendTestData()

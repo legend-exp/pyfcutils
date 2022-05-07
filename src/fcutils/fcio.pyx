@@ -1,6 +1,8 @@
 cimport fcio_c
 cimport numpy as np
+
 import numpy as np
+
 
 cdef class fcio:
     """
@@ -9,7 +11,7 @@ cdef class fcio:
     As a simple config readout, one can get the number of adcs channels and number of samples with GetSimpleConfig()
     although both values are also provided with the GetTraces().shape.
     """
-    
+
     cdef fcio_c.FCIOData* _thisptr
 
     def __cinit__(self, name):
@@ -48,10 +50,10 @@ cdef class fcio:
     def _constructTraceList(self):
         """
         Returns the list of triggered adcs for the current event
-        return np.ndarray(shape=(self.nadcs), dtype=np.int, buffer=tracelist_view) 
+        return np.ndarray(shape=(self.nadcs), dtype=np.int, buffer=tracelist_view)
         """
         cdef unsigned short [:] tracelist_view = self._thisptr.event.trace_list
-        return np.ndarray(shape=(self.numtraces), dtype=np.int16, buffer=tracelist_view) 
+        return np.ndarray(shape=(self.numtraces), dtype=np.int16, buffer=tracelist_view)
 
     def _constructTraces(self):
         """
@@ -218,11 +220,11 @@ cdef class fcio:
     @property
     def timeoffset_start_usec(self):
         return self._thisptr.event.timeoffset[6]
-    
+
     """
       fcio_event 'deadregion' fields
     """
-    
+
     @property
     def deadregion_start_pps(self):
         return self._thisptr.event.deadregion[0]
@@ -250,14 +252,14 @@ cdef class fcio:
     """
       other fcio_event fields
     """
-    
+
     """
       fcio_status fields
     """
 
     @property
     def status(self):
-        return self._thisptr.status.status	
+        return self._thisptr.status.status
 
     @property
     def statustime(self):
@@ -294,4 +296,3 @@ cdef class fcio:
     @property
     def othererrors(self):
         return self._thisptr.status.data.othererrors
-
