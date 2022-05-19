@@ -7,7 +7,7 @@ cdef extern from "fclayout.h":
   cdef int FCLAYOUT_MAX_CABLES
   cdef int QRAXISSIZE
   cdef int QROFFSET
-  
+
   ctypedef enum FCLayoutType:
     UNKNOWN_CAMERA_LAYOUT = 0,
     CTA_MST_FLASHCAM_PROTOTYPE_LAYOUT = 1
