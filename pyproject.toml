@@ -21,3 +21,14 @@ testpaths = "tests"
 [tool.isort]
 profile = "black"
 multi_line_output = 3
+
+[tool.cibuildwheel]
+build = "cp3{8,9,10}-*"
+skip = "*_i686"
+test-extras = "test"
+test-command = "pytest {project}/tests"
+build-verbosity = 1
+
+[tool.cibuildwheel.macos]
+archs = ["auto", "universal2"]
+test-skip = ["*universal2:arm64"]
