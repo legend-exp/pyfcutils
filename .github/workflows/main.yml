@@ -11,7 +11,7 @@ on:
 jobs:
 
   build-and-test:
-    name: Test fcutils with Python
+    name: Test pyfcutils with Python
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false

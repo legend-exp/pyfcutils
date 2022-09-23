@@ -1,4 +1,4 @@
-# fcutils
+# pyfcutils
 
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/legend-exp/pyfcutils?logo=git)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/legend-exp/pyfcutils/pyfcutils/main?label=main%20branch&logo=github)](https://github.com/legend-exp/pyfcutils/actions)
