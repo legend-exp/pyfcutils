@@ -17,7 +17,7 @@ cdef class FCLAYOUT:
             m_p[i] = missing_pixels[i]
         n_pdps = len(pdp_addrs)
         n_missing = len(missing_pixels)
-        self.s = fclayout.FCLayoutCreate(p_addr, n_pdps, m_p, n_missing, CTA_MST_FLASHCAM_PROTOTYPE_LAYOUT)
+        self.s = fclayout.FCLayoutCreate(p_addr, n_pdps, m_p, n_missing, fclayout.CTA_MST_FLASHCAM_PROTOTYPE_LAYOUT)
 
         free(p_addr)
         free(m_p)
