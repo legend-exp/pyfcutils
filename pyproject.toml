@@ -31,4 +31,3 @@ build-verbosity = 1
 
 [tool.cibuildwheel.macos]
 archs = ["auto", "universal2"]
-test-skip = ["*universal2:arm64"]
