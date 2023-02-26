@@ -1,5 +1,5 @@
-from sys import platform
 import platform as pltf
+from sys import platform
 
 import numpy
 from setuptools import setup
@@ -23,7 +23,10 @@ elif platform.startswith('darwin'):
         print('Using macOS intel static library')
         extra_objects = [f'{fcio_libs}/fcio_mac.a', f'{fcio_libs}/tmio-0.93_mac.a']
     elif pltf.processor() == 'arm':
-        extra_objects = [f'{fcio_libs}/fcio_mac_arm.a', f'{fcio_libs}/tmio-0.93_mac_arm.a']
+        extra_objects = [
+            f'{fcio_libs}/fcio_mac_arm.a',
+            f'{fcio_libs}/tmio-0.93_mac_arm.a',
+        ]
         print('Using macOS arm static library')
 elif platform.startswith('win32'):
     raise Exception('Windows not supported!')
