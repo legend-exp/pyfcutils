@@ -1,5 +1,5 @@
 import numpy as np
-from legend_testdata import LegendTestData
+from legendtestdata import LegendTestData
 from pytest import approx
 
 import fcutils
