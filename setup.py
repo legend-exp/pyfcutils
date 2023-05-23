@@ -6,7 +6,6 @@ from Cython.Build import cythonize
 from setuptools import setup
 from setuptools.extension import Extension
 
-
 fcio_libs = 'src/libs'
 
 if platform.startswith('freebsd') or platform.startswith('linux'):
