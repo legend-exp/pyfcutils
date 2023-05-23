@@ -5,14 +5,7 @@ import numpy
 from setuptools import setup
 from setuptools.extension import Extension
 
-try:
-    from Cython.Build import cythonize
-except ImportError:
-    print('Cython not available, compiling C++ sources')
-    USE_CYTHON = False
-else:
-    print('Cython available, compiling .pyx sources')
-    USE_CYTHON = True
+from Cython.Build import cythonize
 
 fcio_libs = 'src/libs'
 
@@ -31,18 +24,16 @@ elif platform.startswith('darwin'):
 elif platform.startswith('win32'):
     raise Exception('Windows not supported!')
 
-ext = '.pyx' if USE_CYTHON else '.cpp'
-
 extensions = [
     Extension(
         'fcutils',
-        sources=['src/fcutils/fcutils' + ext],
+        sources=['src/fcutils/fcutils.pyx'],
         include_dirs=[fcio_libs, 'src/fcutils', numpy.get_include()],
         extra_objects=extra_objects,
     )
 ]
 
-if USE_CYTHON:
-    extensions = cythonize(extensions, language_level=3)
+
+extensions = cythonize(extensions, language_level=3)
 
 setup(ext_modules=extensions)
