@@ -2,10 +2,10 @@ import platform as pltf
 from sys import platform
 
 import numpy
+from Cython.Build import cythonize
 from setuptools import setup
 from setuptools.extension import Extension
 
-from Cython.Build import cythonize
 
 fcio_libs = 'src/libs'
 
