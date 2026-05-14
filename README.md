@@ -9,6 +9,10 @@
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/legend-exp/pyfcutils?logo=github)
 ![License](https://img.shields.io/github/license/legend-exp/pyfcutils)
 
+> [!WARNING]
+>
+> This package is unmaintained. To read FlashCam file use [fcio-py](https://github.com/FlashCam/fcio-py).
+
 pyfcutils offers a wrapper (via Cython) around the fcio library, with
 simplified accessors to the config and event data. Install with pip:
 
