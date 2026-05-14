@@ -6,7 +6,7 @@ ci:
 exclude: ^src/libs/|\.cpp$|\.h$|\.cc$|\.c$
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: "v4.4.0"
+  rev: "v6.0.0"
   hooks:
   - id: check-added-large-files
   - id: check-case-conflict
@@ -25,53 +25,53 @@ repos:
   - id: trailing-whitespace
 
 - repo: https://github.com/asottile/setup-cfg-fmt
-  rev: "v2.4.0"
+  rev: "v3.2.0"
   hooks:
   - id: setup-cfg-fmt
 
 - repo: https://github.com/PyCQA/isort
-  rev: "5.12.0"
+  rev: "8.0.1"
   hooks:
   - id: isort
 
 - repo: https://github.com/asottile/pyupgrade
-  rev: "v3.13.0"
+  rev: "v3.21.2"
   hooks:
   - id: pyupgrade
     args: ["--py36-plus"]
 
-- repo: https://github.com/psf/black
-  rev: "23.9.1"
+- repo: https://github.com/psf/black-pre-commit-mirror
+  rev: "26.3.1"
   hooks:
   - id: black
     args: ["--skip-string-normalization"]
 
 - repo: https://github.com/hadialqattan/pycln
-  rev: "v2.2.2"
+  rev: "v2.6.0"
   hooks:
   - id: pycln
     args: ["--all"]
 
 - repo: https://github.com/PyCQA/flake8
-  rev: "6.1.0"
+  rev: "7.3.0"
   hooks:
   - id: flake8
     additional_dependencies: [flake8-bugbear, pep8-naming]
 
 - repo: https://github.com/mgedmin/check-manifest
-  rev: "0.49"
+  rev: "0.51"
   hooks:
   - id: check-manifest
     stages: [manual]
 
 - repo: https://github.com/codespell-project/codespell
-  rev: "v2.2.5"
+  rev: "v2.4.2"
   hooks:
   - id: codespell
     args: ["-L", "nd,unparseable,compiletime"]
 
 - repo: https://github.com/shellcheck-py/shellcheck-py
-  rev: "v0.9.0.6"
+  rev: "v0.11.0.1"
   hooks:
   - id: shellcheck
 
